@@ -3,8 +3,12 @@ package com.example.sendie
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.*
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 
 class MainActivity : ComponentActivity() {
@@ -17,8 +21,13 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun SendieApp() {
-    Column() {
+fun SendieApp(modifier: Modifier = Modifier) {
+    Column(
+        verticalArrangement = Arrangement.Center,
+        horizontalAlignment = Alignment.CenterHorizontally,
+        modifier = modifier
+            .fillMaxSize()
+    ) {
         ConnectItem()
     }
 }
@@ -26,17 +35,28 @@ fun SendieApp() {
 @Composable
 fun ConnectItem() {
     var clicked by remember { mutableStateOf(false) }
-    var ip by remember {mutableStateOf("")}
+    var isIpEntered by remember { mutableStateOf(false) }
 
-    InsertIp {
-        enteredIp -> ip = enteredIp
+    var ip by remember {mutableStateOf("")}
+    var mess by remember { mutableStateOf("") }
+
+    if(!isIpEntered) { //if the value is set to true then show message texfield
+        InsertIp {
+            enteredIp -> ip = enteredIp
+        }
+
+    } else {
+        Message {
+                enteredMess -> mess = enteredMess
+        }
     }
 
     ConnectionButton(
         clicked = clicked,
         onClick = {
             clicked = true
-            ConnectToServer(ip)
+            isIpEntered = true
+            ConnectToServer(ip, mess)
         }
     )
 }
@@ -45,6 +65,6 @@ fun ConnectItem() {
 
 @Preview
 @Composable
-fun display() {
+fun AppPreview() {
     SendieApp()
 }

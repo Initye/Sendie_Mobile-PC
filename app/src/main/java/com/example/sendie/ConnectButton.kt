@@ -12,7 +12,7 @@ fun ConnectionButton(
     onClick: () -> Unit
 ) {
     Button(onClick = onClick) {
-        Text("Filled")
+        Text("Connect")
     }
 }
 

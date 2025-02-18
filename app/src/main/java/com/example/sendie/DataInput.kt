@@ -21,3 +21,17 @@ fun InsertIp(onIpEntered: (String) -> Unit) {
     )
 }
 
+@Composable
+fun Message(onMsgEntered: (String) -> Unit) {
+    var msg by remember { mutableStateOf(TextFieldValue("")) }
+
+    TextField (
+        value = msg,
+        onValueChange = {
+            msg = it
+            onMsgEntered(msg.text)
+        },
+        label = { Text("Write a message") }
+    )
+}
+
