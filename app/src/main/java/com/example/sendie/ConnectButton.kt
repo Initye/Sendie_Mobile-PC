@@ -11,9 +11,16 @@ fun ConnectionButton(
     clicked: Boolean,
     onClick: () -> Unit
 ) {
-    Button(onClick = onClick) {
-        Text("Connect")
+    if(!clicked) {
+        Button(onClick = onClick) {
+            Text("Connect")
+        }
+    } else {
+        Button(onClick = onClick) {
+            Text("Send Message")
+        }
     }
+
 }
 
 @Preview(showBackground = true)
