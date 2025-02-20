@@ -12,7 +12,7 @@ fun getLocalIpAddress(): String { //For testing
     return try {
         DatagramSocket().use { socket ->
             socket.connect(InetAddress.getByName("8.8.8.8"), 80) // Connect to Google's DNS
-            socket.localAddress.hostAddress // Get the actual IP address
+            socket.localAddress.hostAddress // Get the  IP address
         }
     } catch (e: SocketException) {
         "Unable to determine IP"
@@ -26,10 +26,10 @@ fun main() {
 
     println("Server is working on port ${server.localPort}")
     println("Server is working on IP: $ip")
+
     val client = server.accept()
     println("Client connected: ${client.inetAddress.hostAddress}")
 
-    // Loop to accept multiple client connections
     while (true) {
         val client = server.accept()
 
@@ -56,5 +56,4 @@ fun ClientMessages(client: Socket) {
         println("Error: ${e.message}")
     }
 }
-
 
