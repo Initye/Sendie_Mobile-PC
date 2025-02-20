@@ -29,14 +29,12 @@ fun main() {
     val client = server.accept()
     println("Client connected: ${client.inetAddress.hostAddress}")
 
-
     // Loop to accept multiple client connections
     while (true) {
         val client = server.accept()
 
         ClientMessages(client)
     }
-
 }
 
 // Function to handle communication with the client
@@ -58,4 +56,5 @@ fun ClientMessages(client: Socket) {
         println("Error: ${e.message}")
     }
 }
+
 

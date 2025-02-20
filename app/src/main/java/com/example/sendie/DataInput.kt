@@ -9,29 +9,28 @@ import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.setValue
 
+
 @Composable
-fun InsertIp(onIpEntered: (String) -> Unit) {
-    var ipAddress by remember { mutableStateOf(TextFieldValue(""))}
+fun InputField(label: String, onValueChange: (String) -> Unit) {
+    var text by remember { mutableStateOf("") }
+
     TextField(
-        value = ipAddress,
-        onValueChange = {
-            ipAddress = it
-            onIpEntered(ipAddress.text) },
-        label = { Text("Server IP Address") }
+        value = text,
+        onValueChange= {
+            text = it
+            onValueChange(it)
+        },
+        label = { Text(label) }
     )
 }
 
 @Composable
-fun Message(onMsgEntered: (String) -> Unit) {
-    var msg by remember { mutableStateOf(TextFieldValue("")) }
+fun InsertIp(onIpEntered: (String) -> Unit) {
+    InputField(label = "Server IP Address", onValueChange = onIpEntered)
+}
 
-    TextField (
-        value = msg,
-        onValueChange = {
-            msg = it
-            onMsgEntered(msg.text)
-        },
-        label = { Text("Write a message") }
-    )
+@Composable
+fun Message(isConnected: Boolean, onMsgEntered: (String) -> Unit) {
+    InputField(label = if(isConnected) "Write a message" else "Server IP Address", onValueChange = onMsgEntered)
 }
 

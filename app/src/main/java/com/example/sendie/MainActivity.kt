@@ -37,18 +37,20 @@ fun SendieApp(modifier: Modifier = Modifier) {
 fun ConnectItem() {
     var clicked by remember { mutableStateOf(false) }
     var isIpEntered by remember { mutableStateOf(false) }
+    var isConnected by remember { mutableStateOf(false) } //Variable that allows to change text on button when connected
+    var isConnecting by remember { mutableStateOf(false) }
 
     var ip by remember {mutableStateOf("")}
     var mess by remember { mutableStateOf("") }
 
-    if(!isIpEntered) { //if the value is set to true then show message texfield
+    if(!isIpEntered) { //if the value is set to true then show message textfield
         InsertIp {
             enteredIp -> ip = enteredIp
         }
 
     } else {
-        Message {
-                enteredMess -> mess = enteredMess
+        Message(isConnected) {
+            enteredMess -> mess = enteredMess
         }
     }
 
@@ -56,9 +58,26 @@ fun ConnectItem() {
         clicked = clicked,
         onClick = {
             clicked = true
-            isIpEntered = true
-            ConnectToServer(ip, mess)
-        }
+
+
+            if(!isConnected && !isConnecting) {
+                isConnecting = true //Connection in progress
+
+                ConnectToServer(ip, mess,
+                    onSuccess = {
+                      isConnected = true
+                      isConnecting = false //Allows ui to change
+                      isIpEntered = true
+                    },
+                    onFailure = {
+                        isConnecting = false //Prevents ui from changing
+                    })
+
+            } else if (isConnected) { //If connected
+                ConnectToServer(ip, mess, onFailure = {}, onSuccess = {})
+            }
+        },
+         buttonText = if (isConnected) "Send Message" else "Connect"
     )
 }
 

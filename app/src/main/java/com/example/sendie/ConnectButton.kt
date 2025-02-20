@@ -9,23 +9,17 @@ import androidx.compose.ui.tooling.preview.Preview
 @Composable
 fun ConnectionButton(
     clicked: Boolean,
-    onClick: () -> Unit
+    onClick: () -> Unit,
+    buttonText: String
 ) {
-    if(!clicked) {
-        Button(onClick = onClick) {
-            Text("Connect")
-        }
-    } else {
-        Button(onClick = onClick) {
-            Text("Send Message")
-        }
+    Button(onClick = onClick) {
+        Text(text = buttonText)
     }
-
 }
 
 @Preview(showBackground = true)
 @Composable
 fun ButtonPreview() {
-    ConnectionButton(clicked = false, onClick = {})
+    ConnectionButton(clicked = false, onClick = {}, buttonText = "")
 }
 
