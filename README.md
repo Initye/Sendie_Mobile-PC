@@ -7,12 +7,13 @@ This setup allows easy communications between phone and a PC.
 ## How to use
 - Install on your phone the app via Android Studio (open mobile version and run "App" to your phone via USB cable.
 - Now you can decide which version to use:
-  #Mobile: 
+
+  # Mobile: 
 1. Run Server.kt
 2. Connect to shown ip (console) on your phone
 3. Send message (message will appear in the console)
 
-  #Desktop:
+  # Desktop:
 1. In terminal write ./gradlew run
 2. The app will open, click "Start Server" button
 3. Connect to the app from phone via IP
