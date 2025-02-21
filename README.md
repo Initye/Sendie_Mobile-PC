@@ -19,5 +19,9 @@ This setup allows easy communications between phone and a PC.
 3. Connect to the app from phone via IP
 4. Send message (message will appear in the app)
 
+### Security Warning: This is an early version of the app and does not use encrypted communication. For now, do not use it on public Wi-Fi, as your messages could be intercepted.
 ### Keep in mind that this is early version of the app and it needs some UI improvements.
-### Don't use the app on public Wi-Fi, it lacks encrypted communication 
+
+
+## License
+This app is open-source. Feel free to modify or use it as you see fit, but please remember to credit the original authors.
