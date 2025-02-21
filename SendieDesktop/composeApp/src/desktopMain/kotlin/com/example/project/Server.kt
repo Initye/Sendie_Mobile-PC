@@ -19,7 +19,6 @@ fun getLocalIpAddress(): String { //For testing
     }
 }
 
-
 fun main() {
     val server = ServerSocket(9999)
     val ip = getLocalIpAddress() // Get local IP address

@@ -27,8 +27,6 @@ fun ConnectToServer(ip: String, mess: String, onSuccess: () -> Unit, onFailure: 
     }
 }
 
-
-
 fun main() {
     ConnectToServer("127.0.0.1", "", onSuccess = {}, onFailure = {})
 

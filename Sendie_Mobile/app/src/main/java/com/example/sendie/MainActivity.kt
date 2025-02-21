@@ -59,7 +59,6 @@ fun ConnectItem() {
         onClick = {
             clicked = true
 
-
             if(!isConnected && !isConnecting) {
                 isConnecting = true //Connection in progress
 
