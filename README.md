@@ -16,12 +16,15 @@ This setup allows easy communications between phone and a PC.
 ### Desktop:
 1. Download .msi APP "InstallerPC.msi".
 2. Click start server.
-3. Check in cmd your local ip f.e "192.168.100.20" 
+3. Check in cmd your local ip f.e "192.168.100.20"
+4. Connect to the app from phone via IP.
+5. Send message (message will appear in the app)
 ### OR
 1. In terminal write ./gradlew run
 2. The app will open, click "Start Server" button
-3. Connect to the app from phone via IP
-4. Send message (message will appear in the app)
+3. Check in cmd your local ip f.e "192.168.100.20"
+4. Connect to the app from phone via IP
+5. Send message (message will appear in the app)
 
 ### Security Warning: This is an early version of the app and does not use encrypted communication. For now, do not use it on public Wi-Fi, as your messages could be intercepted.
 ### Keep in mind that this is early version of the app and it needs some UI improvements.
