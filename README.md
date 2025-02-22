@@ -17,7 +17,7 @@ This setup allows easy communications between phone and a PC.
 1. Download .msi APP "InstallerPC.msi".
 2. Click start server.
 3. Check in cmd your local ip f.e "192.168.100.20" 
-## OR
+### OR
 1. In terminal write ./gradlew run
 2. The app will open, click "Start Server" button
 3. Connect to the app from phone via IP
