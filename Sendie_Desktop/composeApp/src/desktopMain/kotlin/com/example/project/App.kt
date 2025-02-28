@@ -5,6 +5,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.text.selection.SelectionContainer
 import androidx.compose.material.Button
 import androidx.compose.material.Text
 
@@ -117,7 +118,9 @@ fun Messages(messages: List<String>) {
     // Display list of received messages
     Text("Client said:")
     // Display each message one by one
-    messages.forEach { message ->
-        Text(message)
+    SelectionContainer {
+        messages.forEach { message ->
+            Text(message)
+        }
     }
 }

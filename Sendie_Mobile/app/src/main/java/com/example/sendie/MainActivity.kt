@@ -82,7 +82,7 @@ fun ConnectItem() {
 
 
 
-@Preview
+@Preview(showBackground = true)
 @Composable
 fun AppPreview() {
     SendieApp()

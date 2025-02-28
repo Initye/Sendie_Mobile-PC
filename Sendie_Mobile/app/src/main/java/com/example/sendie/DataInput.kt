@@ -5,7 +5,6 @@ import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
-import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.setValue
 
@@ -32,4 +31,6 @@ fun InsertIp(onIpEntered: (String) -> Unit) {
 fun Message(isConnected: Boolean, onMsgEntered: (String) -> Unit) {
     InputField(label = if(isConnected) "Write a message" else "Server IP Address", onValueChange = onMsgEntered)
 }
+
+
 
