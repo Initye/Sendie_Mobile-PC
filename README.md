@@ -35,4 +35,3 @@ This app is open-source. Feel free to modify or use it as you see fit, but pleas
 
 ![image](https://github.com/user-attachments/assets/c312828e-6ac3-41ad-a7bf-b6ef3887dc5d)![image](https://github.com/user-attachments/assets/319079b8-907e-46b9-8cb9-e825b0f73388)
 
-
