@@ -1,6 +1,6 @@
 # Overview
 This app works by setting up a TCP socket server on the PC (server) and a socket client on the phone, 
-which then (depends on version), prints them to the console (Mobile Version) or prints them to the kotlin app (Desktop Version). 
+which then (depends on version), prints them to the console (Mobile Version) or prints them to the java app (Desktop Version). 
 This setup allows easy communications between phone and a PC. 
 
 
